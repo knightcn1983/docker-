@@ -1,0 +1,26 @@
+学习知识点概要
+Linux 、Windows 10 和 MacOS 上的安装
+docker基础命令
+
+学习内容
+1 拉取镜像
+docker pull [选项] [docker镜像地址:标签]
+2 运行镜像并进入容器
+ docker run -it --rm ubuntu:18.04 bash
+3 查看本地镜像（list 镜像）
+docker images
+4 查看运行中的容器
+ docker ps
+5 进入运行中/后台运行的容器
+docker exec -it [CONTAINER ID] /bin/bash
+6 保存修改
+docker commit [CONTAINER ID] registry.cn-shanghai.aliyuncs.com/test/pytorch:myversion
+
+ 
+学习问题与解答
+1、需要掌握通过dockefile 制作自身镜像的方法
+2 常见深度学习镜像仓库链接
+https://tianchi.aliyun.com/forum/postDetail?spm=5176.21852674.0.0.47376bdfMLniYO&postId=67720
+
+学习思考与总结：
+docker镜像是搭建环境、提交成果的方便模式，需深入掌握并了解其不足之处
