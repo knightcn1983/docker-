@@ -1,0 +1,36 @@
+学习知识点概要
+创建镜像仓库账号
+
+学习内容
+1、创建自己的仓库地址
+https://cr.console.aliyun.com/cn-hangzhou/instances
+2、访问自己的仓库
+
+登录实例
+获取临时密码或固定密码后，可通过密码登录镜像服务实例：
+1）获取访问域名，基于当前的网络环境，选择对应的专有网络、公网或经典网络域名。
+2）在终端中输入访问凭证，登录Registry实例
+ sudo docker login --username=dingtalk_fecomd registry.cn-hangzhou.aliyuncs.com
+
+学习问题与解答
+密码输入时注意输入法，否则会出现密码一样，但是授权拒绝的情况
+
+学习思考与总结
+常用命令行总结：
+1. 登录阿里云Docker Registry
+
+$ docker login --username=dingtalk_fecomd registry.cn-hangzhou.aliyuncs.com
+用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
+
+可以在访问凭证页面修改凭证密码。
+
+2. 从Registry中拉取镜像
+
+$ docker pull registry.cn-hangzhou.aliyuncs.com/icanflycn/rooms:[镜像版本号]
+
+3. 将镜像推送到Registry
+
+$ docker login --username=dingtalk_fecomd registry.cn-hangzhou.aliyuncs.com
+$ docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/icanflycn/rooms:[镜像版本号]
+$ docker push registry.cn-hangzhou.aliyuncs.com/icanflycn/rooms:[镜像版本号]
+根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。
